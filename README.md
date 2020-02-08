@@ -13,8 +13,9 @@ Project Setup
     2. `python3.# manage.py migrate`
 4. Create superuser to use admin panel(optional)
     1. `python3.# manage.py createsuperuser`
-7. Run Django server (default host is 127.0.0.1 and port is 8000)
+5. Run Django server (default host is 127.0.0.1 and port is 8000)
     1. `python3.# manage.py runserver`
+6. Change EMAIL settings `project/project/settings.py` to register using the API.
 
 
 API Endpoints
@@ -32,19 +33,19 @@ Production Settings
 ------------------
 Settings file location `project/project/settings.py`
 
-Set *DEBUG = False* when deploying in production server.
+Set **DEBUG** to *False* when deploying in production server.
 
-Change the *SECRET_KEY* values with random strings.
+Change the **SECRET_KEY** values with random strings.
 
-If your front-end is running from different host add the host name in *ALLOWED_HOSTS*.
+If your front-end is running from different host add the host name in **ALLOWED_HOSTS**.
 
-Feel free to change access-token and refresh-token expire time in 'ACCESS_TOKEN_LIFETIME','REFRESH_TOKEN_LIFETIME' in *SIMPLE_JWT*.
+Feel free to change access-token and refresh-token expire time in *ACCESS_TOKEN_LIFETIME* and *REFRESH_TOKEN_LIFETIME* in **SIMPLE_JWT**.
 
-If your frontend is running from a different domain, add your domain in *CORS_ORIGIN_WHITELIST* and *CSRF_TRUSTED_ORIGINS* to whitelist your domain from CORS restrictions.
+If your frontend is running from a different domain, add your domain in **CORS_ORIGIN_WHITELIST** and **CSRF_TRUSTED_ORIGINS** to whitelist your domain from CORS restrictions.
 
-You can allow `cache-control` header from browser by adding `cache-control` to the *CORS_ALLOW_HEADERS* list.
+You can allow `cache-control` header from browser by adding `cache-control` to the **CORS_ALLOW_HEADERS** list.
 
-Allow or restrict HTTP request methods by modifying *CORS_ALLOW_METHODS* list.
+Allow or restrict HTTP request methods by modifying **CORS_ALLOW_METHODS** list.
 
 Change *DEFAULT_FROM_EMAIL*, *SERVER_EMAIL*, *EMAIL_BACKEND*, *EMAIL_HOST*, *EMAIL_USE_TLS*, *EMAIL_PORT*, *EMAIL_HOST_USER*, *EMAIL_HOST_PASSWORD* to setup your email.
 
